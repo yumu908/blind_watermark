@@ -43,6 +43,16 @@ blind_watermark --embed --pwd 1234 examples/pic/ori_img.jpeg "watermark text" ex
 blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
 ```
 
+# 经测试路径参数需要传完整路径 
+blind_watermark --embed --pwd 1234 D:/PythonSpac/blind_watermark-master/examples/pic/test.png "打磨飞雪！" D:/PythonSpac/blind_watermark-master/examples/output/embedded.png
+如果嵌入水印成功会打印出来：
+Embed succeed! to file  D:/PythonSpac/blind_watermark-master/examples/output/embedded.png
+Put down watermark size: 120
+需要记住这个size 120，提取水印的时候要用到
+
+#提取水印:
+ blind_watermark --extract --pwd 1234 --wm_shape 120  D:/PythonSpac/blind_watermark-master/examples/output/embedded.png
+ 这个120 就是上面打印来的size。
 
 
 ## Python 中使用
