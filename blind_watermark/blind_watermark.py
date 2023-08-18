@@ -103,6 +103,7 @@ class WaterMark:
             cv2.imwrite(out_wm_name, wm)
         elif mode == 'str':
             byte = ''.join(str((i >= 0.5) * 1) for i in wm)
+            # byte = ''.join((np.round(wm)).astype(np.int_).astype(np.str_))  #如果上面出错，请把这条注释的替换掉上面的
             wm = bytes.fromhex(hex(int(byte, base=2))[2:]).decode('utf-8', errors='replace')
 
         return wm
